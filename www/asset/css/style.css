@@ -1,0 +1,1494 @@
+body,
+html {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background: linear-gradient(to top right, #f69118, #fff);
+    overflow-x: hidden;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.no-focus {
+    display: none;
+}
+
+.flex {
+    display: flex;
+}
+
+.grid {
+    display: grid;
+}
+
+.title {
+    text-align: center;
+}
+
+.title>span {
+    color: #f69118;
+}
+
+.container-login {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    grid-template-areas:
+        ". . ."
+        ". bordo ."
+        ". . .";
+    height: 91vh;
+}
+
+.container-login>.bordo {
+    grid-area: bordo;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.container-login>.bordo>.superior_bar {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+
+.container-login>.bordo>.superior_bar>h1:hover,
+.container-login>.bordo>.superior_bar>h1.active {
+    text-decoration: underline 2px solid #000;
+}
+
+.container-login>.bordo>.login,
+.container-login>.bordo>.registrati {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.container-login>.bordo>.login input,
+.container-login>.bordo>.registrati input {
+    padding: 10px 14px;
+    border: 2px solid transparent;
+    border-radius: 20px;
+    font-size: 16px;
+    background-color: #fff;
+    color: #333;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+.container-login>.bordo>.login input::placeholder,
+.container-login>.bordo>.registrati input::placeholder {
+    color: #888;
+}
+
+.container-login>.bordo>.login input:hover,
+.container-login>.bordo>.registrati input:hover {
+    border-color: #f69118;
+    box-shadow: 0 0 6px rgba(246, 145, 24, 0.3);
+}
+
+.container-login>.bordo>.login input:focus,
+.container-login>.bordo>.registrati input:focus {
+    border-color: #e5811a;
+    box-shadow: 0 0 8px rgba(229, 129, 26, 0.5);
+    background-color: #fff7f0;
+}
+
+button {
+    padding: 10px 18px;
+    border: none;
+    outline: none;
+    border-radius: 20px;
+    font-size: 16px;
+    background-color: #f69118;
+    color: #fff;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    background-color: #e5811a;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+button:active {
+    transform: translateY(1px);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+select {
+    padding: 10px 40px 10px 14px;
+    border: 2px solid transparent;
+    border-radius: 20px;
+    font-size: 16px;
+    background-color: #fff;
+    color: #333;
+    outline: none;
+    transition: all 0.3s ease;
+    appearance: none;
+    cursor: pointer;
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg width='12' height='8' viewBox='0 0 12 8' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill='%23f69118' d='M0 0l6 8 6-8z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 12px center;
+    background-size: 14px;
+}
+
+select:hover {
+    border-color: #f69118;
+    box-shadow: 0 0 6px rgba(246, 145, 24, 0.3);
+}
+
+select:focus {
+    border-color: #e5811a;
+    box-shadow: 0 0 8px rgba(229, 129, 26, 0.5);
+    background-color: #fff7f0;
+}
+
+select option {
+    background-color: #fff;
+    color: #333;
+}
+
+.container-login>.bordo>.attivita,
+.container-login>.bordo>.prezzo {
+    flex-direction: column;
+    gap: 20px;
+}
+
+.container-login>.bordo>.prezzo {
+    align-items: center;
+}
+
+.container-login>.bordo>.attivita .attivita_input,
+.container-login>.bordo>.prezzo input {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    outline: none;
+    border: 2px solid #f69118;
+    border-radius: 7px;
+    background-color: #fff;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+.container-login>.bordo>.attivita .attivita_input:hover,
+.container-login>.bordo .prezzo>input:hover {
+    box-shadow: 0 0 10px rgba(246, 145, 24, 0.5);
+    transform: scale(1.05);
+    border-color: #e8820f;
+}
+
+
+.container-login>.bordo>.attivita .attivita_input:checked,
+.container-login>.bordo>.prezzo input:checked {
+    background-color: #f69118;
+    border-color: #f69118;
+    transform: scale(1.02);
+    box-shadow: 0 0 12px rgba(246, 145, 24, 0.6);
+}
+
+
+.container-login>.bordo>.attivita .attivita_input:checked::after,
+.container-login>.bordo>.prezzo input:checked::after {
+    content: "✓";
+    position: absolute;
+    color: #ffffff;
+    font-size: 12px;
+    font-weight: 900;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    opacity: 0;
+    transition: all 0.2s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    line-height: 1;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+}
+
+
+
+
+.container-login>.bordo>.attivita .attivita_input:focus,
+.container-login>.bordo>.prezzo input:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(246, 145, 24, 0.3);
+}
+
+
+.container-login>.bordo>.attivita .attivita_input:checked:hover,
+.container-login>.bordo>.prezzo input:checked:hover {
+    background-color: #e8820f;
+    border-color: #e8820f;
+    transform: scale(1.07);
+    box-shadow: 0 0 15px rgba(246, 145, 24, 0.8);
+}
+
+
+.container-login>.bordo>.attivita .attivita_input:active,
+.container-login>.bordo>.prezzo input:active {
+    transform: scale(0.95);
+}
+
+
+
+
+.container-login>.bordo>.attivita>label,
+.container-login>.bordo>.prezzo>label {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 16px;
+    cursor: pointer;
+    user-select: none;
+}
+
+.errore {
+    padding: 10px;
+    border-radius: 20px;
+    background-color: #f00;
+}
+
+.container-login>.bordo>.login span,
+.container-login>.bordo>.registrati span {
+    margin-left: 20px;
+}
+
+.container-principale {
+    grid-template-columns: repeat(7, 1fr);
+    grid-template-rows: 93% 7%;
+    grid-template-areas:
+        "giorno1 giorno2 giorno3 giorno4 giorno5 giorno6 giorno7"
+        "button button button button button button button";
+    height: 88vh;
+}
+
+.container-principale>.giorno1 {
+    grid-area: giorno1;
+
+}
+
+.container-principale>.giorno2 {
+    grid-area: giorno2;
+
+}
+
+.container-principale>.giorno3 {
+    grid-area: giorno3;
+
+}
+
+.container-principale>.giorno4 {
+    grid-area: giorno4;
+
+}
+
+.container-principale>.giorno5 {
+    grid-area: giorno5;
+}
+
+.PrenotazioniGiorno {
+    overflow-x: hidden;
+    overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(246, 145, 24, 0.6) transparent;
+    max-height: 88%;
+}
+
+.container-principale>.giorno6 {
+    grid-area: giorno6;
+
+}
+
+.container-principale>.giorno7 {
+    grid-area: giorno7;
+
+}
+
+.container-principale>.button {
+    grid-area: button;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.giorno {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.giorno>h1 {
+    margin-bottom: 0;
+}
+
+.giorno>p {
+    margin-top: 0;
+}
+
+.newLesson {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 30%;
+    padding: 20px;
+    gap: 20px;
+    border-radius: 20px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    background: linear-gradient(to top right, #f69118, #fff);
+    transform: translate(-50%, -50%);
+}
+
+.newLesson>.tempo>.da {
+    margin-left: 20px;
+}
+
+.newLesson>.tempo>.a {
+    margin-left: 98px;
+}
+
+.newLesson>.X {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    background-color: #dc3545;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 1;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+    user-select: none;
+}
+
+.newLesson>.X:hover {
+    background-color: #c82333;
+    transform: scale(1.1);
+    box-shadow: 0 2px 8px rgba(220, 53, 69, 0.4);
+}
+
+.newLesson>.X:active {
+    transform: scale(0.95);
+    background-color: #bd2130;
+}
+
+.newLesson .newAttivita {
+    -webkit-appearance: none;
+    width: 20px;
+    height: 20px;
+    border: 2px solid #f69118;
+    border-radius: 50%;
+    background-color: #fff;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    margin-right: 8px;
+}
+
+.newLesson .newAttivita:hover {
+    box-shadow: 0 0 8px rgba(246, 145, 24, 0.4);
+    transform: scale(1.1);
+}
+
+.newLesson .newAttivita:checked {
+    background-color: #f69118;
+    border-color: #e5811a;
+}
+
+.newLesson .newAttivita:checked::after {
+    content: "";
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    background-color: #fff;
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.newLesson>label {
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    user-select: none;
+    color: #333;
+    transition: color 0.3s ease;
+}
+
+.newLesson input[type="time"] {
+    padding: 10px 14px;
+    border: 2px solid #f69118;
+    border-radius: 15px;
+    font-size: 14px;
+    background-color: #fff;
+    color: #333;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+.newLesson input[type="time"]:hover {
+    border-color: #e5811a;
+    box-shadow: 0 0 6px rgba(246, 145, 24, 0.3);
+}
+
+.newLesson input[type="time"]:focus {
+    border-color: #e5811a;
+    box-shadow: 0 0 8px rgba(229, 129, 26, 0.5);
+    background-color: #fff7f0;
+}
+
+.newLesson select {
+    padding: clamp(8px, 2.5vw, 12px) clamp(10px, 3vw, 14px);
+    border: 2px solid #f69118;
+    border-radius: 15px;
+    font-size: clamp(12px, 3vw, 14px);
+    background-color: #fff;
+    color: #333;
+    outline: none;
+    transition: all 0.3s ease;
+    width: 100%;
+}
+
+.newLesson select:hover {
+    border-color: #e5811a;
+    box-shadow: 0 0 6px rgba(246, 145, 24, 0.3);
+}
+
+.newLesson select:focus {
+    border-color: #e5811a;
+    box-shadow: 0 0 8px rgba(229, 129, 26, 0.5);
+    background-color: #fff7f0;
+}
+
+.newActivity {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 20px;
+    padding: 10px;
+}
+
+.newActivity.sala_pesi {
+    background-color: #e74c3c;
+}
+
+.newActivity.crossfit {
+    background-color: #f39c12;
+}
+
+.newActivity.danza {
+    background-color: #e91e63;
+}
+
+.newActivity.funzionale {
+    background-color: #3498db;
+}
+
+.newActivity.fit_box {
+    background-color: #9b59b6;
+}
+
+
+
+.newActivity>h3 {
+    margin: 0;
+}
+
+.newActivity>p {
+    margin-bottom: 0;
+}
+
+.newActivity:hover {
+    transform: scale(1.1);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    z-index: 10;
+}
+
+
+
+.Prenotazioni {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: linear-gradient(to top right, #f69118, #fff);
+    border-radius: 24px;
+    padding: 32px;
+    box-shadow:
+        0 20px 60px rgba(0, 0, 0, 0.25),
+        0 8px 32px rgba(246, 145, 24, 0.3);
+    z-index: 1000;
+    min-width: 380px;
+    max-width: 90vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+    border: 3px solid #f69118;
+    animation: slideIn 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translate(-50%, -60%) scale(0.8);
+    }
+
+    to {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1);
+    }
+}
+
+.Prenotazioni>.numeroPrenotazioni>.newPrenotazione .data {
+    margin: 0;
+    color: #555;
+    font-size: 14px;
+    font-weight: 500;
+    padding: 6px 12px;
+    background: rgba(85, 85, 85, 0.1);
+    border-radius: 8px;
+    border: 1px solid rgba(85, 85, 85, 0.2);
+}
+
+.Prenotazioni>.numeroPrenotazioni {
+    overflow-y: auto;
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    max-height: 70vh;
+    width: 100%;
+    padding: 4px;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(246, 145, 24, 0.6) transparent;
+}
+
+/*mi fa diventare la scrollbar di 8px*/
+.Prenotazioni>.numeroPrenotazioni::-webkit-scrollbar,
+.PrenotazioniGiorno::-webkit-scrollbar,
+.PrenotazioneAdmin>.All_user::-webkit-scrollbar,
+.PrenotazionePersonal>.All_user::-webkit-scrollbar {
+    width: 8px;
+}
+
+/*Serve a decidere come appare la “pista” della barra di scorrimento di un contenitore scrollabile*/
+.Prenotazioni>.numeroPrenotazioni::-webkit-scrollbar-track,
+.PrenotazioniGiorno::-webkit-scrollbar-track,
+.PrenotazioneAdmin>.All_user::-webkit-scrollbar-track,
+.PrenotazionePersonal>.All_user::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+}
+
+/*modifico la parte che scrollo con il mouse*/
+.Prenotazioni>.numeroPrenotazioni::-webkit-scrollbar-thumb,
+.PrenotazioniGiorno::-webkit-scrollbar-thumb,
+.PrenotazioneAdmin>.All_user::-webkit-scrollbar-thumb,
+.PrenotazionePersonal>.All_user::-webkit-scrollbar-thumb {
+    background: rgba(246, 145, 24, 0.8);
+    border-radius: 10px;
+    border: 2px solid transparent;
+}
+
+.Prenotazioni>.numeroPrenotazioni::-webkit-scrollbar-thumb:hover,
+.PrenotazioniGiorno::-webkit-scrollbar-thumb:hover,
+.PrenotazioneAdmin>.All_user::-webkit-scrollbar-thumb:hover,
+.PrenotazionePersonal>.All_user::-webkit-scrollbar-thumb:hover {
+    background: #e5811a;
+}
+
+.Prenotazioni>.numeroPrenotazioni>.newPrenotazione {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 20px;
+    padding: 20px 28px;
+    /* Ridotto leggermente per fare spazio al giorno */
+    background-color: #fff;
+    box-shadow:
+        0 6px 20px rgba(246, 145, 24, 0.4),
+        0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    border: 2px solid #f69118;
+    cursor: pointer;
+    gap: 8px;
+    /* Aggiunge spazio consistente tra gli elementi */
+}
+
+.Prenotazioni>.numeroPrenotazioni>.newPrenotazione h3 {
+    margin: 0;
+    color: #f69118;
+    font-size: 22px;
+    font-weight: 700;
+}
+
+/* Nuovo stile per il giorno */
+.Prenotazioni>.numeroPrenotazioni>.newPrenotazione .giorno {
+    margin: 0;
+    color: #666;
+    font-size: 14px;
+    font-weight: 600;
+    padding: 4px 12px;
+    background: rgba(102, 102, 102, 0.1);
+    border-radius: 8px;
+    border: 1px solid rgba(102, 102, 102, 0.2);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.Prenotazioni>.numeroPrenotazioni>.newPrenotazione .ora {
+    margin: 0;
+    color: #333;
+    font-size: 16px;
+    font-weight: 500;
+    padding: 8px 16px;
+    background: rgba(246, 145, 24, 0.1);
+    border-radius: 12px;
+    border: 1px solid rgba(246, 145, 24, 0.2);
+}
+
+.Prenotazioni>.numeroPrenotazioni>.newPrenotazione>.X {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background-color: #dc3545;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 18px;
+    /*altezza della scrittura 1=20px*/
+    line-height: 1;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    border: 3px solid #fff;
+    /*impedisce all'utente di selezionare il testo con il mouse o la tastiera.*/
+    user-select: none;
+    box-shadow:
+        0 4px 12px rgba(220, 53, 69, 0.4),
+        0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.Prenotazioni>.numeroPrenotazioni>.newPrenotazione>.X:hover {
+    background-color: #c82333;
+    transform: scale(1.1);
+    box-shadow:
+        0 6px 20px rgba(220, 53, 69, 0.5),
+        0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.Prenotazioni>.numeroPrenotazioni>.newPrenotazione>.X:active {
+    transform: scale(0.95);
+    background-color: #bd2130;
+}
+
+.PrenotazioneAdmin,
+.PrenotazionePersonal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: linear-gradient(to top right, #f69118, #fff);
+    border-radius: 24px;
+    padding: 32px;
+    box-shadow:
+        0 20px 60px rgba(0, 0, 0, 0.25),
+        0 8px 32px rgba(246, 145, 24, 0.3);
+    z-index: 1000;
+    min-width: 380px;
+    max-width: 90vw;
+    max-height: 80vh;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    border: 3px solid #f69118;
+    animation: slideIn 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.PrenotazioneAdmin>.All_user,
+.PrenotazionePersonal>.All_user {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    overflow-y: auto;
+    max-height: 60vh;
+    padding-right: 6px;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(246, 145, 24, 0.6) transparent;
+}
+.PrenotazionePersonal>.All_user{
+    align-items: center;
+}
+
+
+.PrenotazioneAdmin .utente,
+.PrenotazionePersonal .utente {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 20px;
+    background-color: #fff;
+    border-radius: 16px;
+    border: 2px solid #f69118;
+    box-shadow:
+        0 6px 20px rgba(246, 145, 24, 0.4),
+        0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+.PrenotazionePersonal .utente{
+    justify-content: center;
+    width: 50%;
+}
+
+
+
+.PrenotazioneAdmin .utente .nome,
+.PrenotazionePersonal .utente .nome {
+    font-size: 18px;
+    font-weight: 600;
+    color: #333;
+}
+
+.PrenotazioneAdmin .utente button {
+    padding: 8px 16px;
+    border-radius: 16px;
+    font-size: 14px;
+    background-color: #dc3545;
+    transition: all 0.3s ease;
+}
+
+.PrenotazioneAdmin .utente button:hover {
+    background-color: #c82333;
+}
+
+.PrenotazioneAdmin>button,
+.PrenotazionePersonal>button {
+    align-self: center;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 20px;
+}
+
+.PrenotazioneAdmin>.X,
+.PrenotazionePersonal>.X {
+    position: absolute;
+    top: -14px;
+    right: -14px;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background-color: #dc3545;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 1;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    border: 3px solid #fff;
+    user-select: none;
+    box-shadow:
+        0 4px 12px rgba(220, 53, 69, 0.4),
+        0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.PrenotazioneAdmin>.X:hover,
+.PrenotazionePersonal>.X:hover {
+    background-color: #c82333;
+    transform: scale(1.1);
+    box-shadow:
+        0 6px 20px rgba(220, 53, 69, 0.5),
+        0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.PrenotazioneAdmin>.X:active,
+.PrenotazionePersonal>.X:active {
+    transform: scale(0.95);
+    background-color: #bd2130;
+}
+
+
+
+.icon {
+    background: url(../img/eye.png) no-repeat;
+    background-size: cover;
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    top: 44%;
+    right: 10px;
+}
+
+.password {
+    position: relative;
+}
+
+.admin_password {
+    position: relative;
+}
+
+/* Stile per il nome utente dentro .info_user */
+.info_user .nome {
+    background: linear-gradient(135deg, #f69118, #e5811a);
+    color: #fff;
+    padding: 12px 18px;
+    border-radius: 25px;
+    font-size: 16px;
+    font-weight: 600;
+    box-shadow:
+        0 4px 15px rgba(246, 145, 24, 0.4),
+        0 2px 8px rgba(0, 0, 0, 0.1);
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+    cursor: default;
+    white-space: nowrap;
+    animation: slideInRight 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+
+
+/* Stile per il ruolo principale dentro .info_user */
+.info_user .ruolo_principale {
+    background: rgba(255, 255, 255, 0.95);
+    color: #f69118;
+    padding: 12px 18px;
+    border-radius: 25px;
+    font-size: 14px;
+    font-weight: 700;
+    box-shadow:
+        0 4px 15px rgba(246, 145, 24, 0.3),
+        0 2px 8px rgba(0, 0, 0, 0.1);
+    border: 2px solid #f69118;
+    backdrop-filter: blur(10px);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    cursor: default;
+    white-space: nowrap;
+    animation: slideInRight 0.8s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+/* Miglioramento del container info_user per padding e z-index */
+.info_user {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 100;
+    padding: 0;
+    /* Reset padding se presente */
+}
+
+
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(100px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+
+
+@media (max-width: 1000px) {
+
+    .info_user .nome,
+    .info_user .ruolo_principale {
+        padding: 10px 14px;
+        font-size: 13px;
+        border-radius: 20px;
+    }
+
+    .info_user .ruolo_principale {
+        font-size: 11px;
+    }
+
+
+}
+
+
+@media (max-width: 885px) {
+    .info_user {
+        flex-direction: column;
+        align-items: flex-end;
+        gap: 10px;
+    }
+
+}
+
+@media (max-width: 480px) {
+
+    .calendario-popup {
+        min-width: 260px;
+        padding: 12px;
+    }
+
+
+    .info_user .nome,
+    .info_user .ruolo_principale {
+        padding: 6px 10px;
+        font-size: 11px;
+    }
+
+    .container-principale {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: 22% 22% 22% 22% 12%;
+        grid-template-areas:
+            "giorno1 giorno2"
+            "giorno3 giorno4"
+            "giorno5 giorno6"
+            "giorno7 giorno7"
+            "button button";
+        height: 88vh;
+    }
+
+    .PrenotazioniGiorno {
+        max-height: 73%;
+    }
+
+    .giorno>h1 {
+        font-size: 14px;
+    }
+
+    .giorno>p {
+        font-size: 11px;
+    }
+
+    .PrenotazioneAdmin,
+    .PrenotazionePersonal {
+        min-width: 303px;
+    }
+
+    .PrenotazioneAdmin .utente>button,
+    .PrenotazionePersonal .utente>button {
+        font-size: 10px;
+    }
+
+    .Prenotazioni {
+        min-width: 297px;
+    }
+
+    .newLesson {
+        width: 95vw;
+        padding: 20px 15px;
+        border-radius: 15px;
+        max-height: 95vh;
+    }
+
+    .newLesson>.X {
+        top: 10px;
+        right: 10px;
+        width: 30px;
+        height: 30px;
+        font-size: 14px;
+    }
+
+    .newLesson>.tempo>.da {
+        margin-left: 10px;
+    }
+
+    .newLesson>.tempo>.a {
+        margin-left: 98px;
+    }
+
+    .newLesson .tempo input {
+        width: 45%;
+        margin-right: 5px;
+    }
+
+    .newLesson>label {
+        padding: 5px 0;
+    }
+
+}
+
+@media (max-width: 1024px) and (min-width: 769px) {
+    .container-principale {
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: 46% 46% 8%;
+        grid-template-areas:
+            "giorno1 giorno2 giorno3 giorno4"
+            "giorno5 giorno6 giorno7 giorno7"
+            "button button button button";
+    }
+
+    .PrenotazioniGiorno {
+        max-height: 78%;
+    }
+}
+
+/* Tablet styles */
+@media (min-width: 481px) and (max-width: 768px) {
+    .container-principale {
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: 30% 30% 30% 10%;
+        grid-template-areas:
+            "giorno1 giorno2 giorno3"
+            "giorno4 giorno5 giorno6"
+            "giorno7 giorno7 giorno7"
+            "button button button";
+        height: 88vh;
+    }
+
+    .PrenotazioniGiorno {
+        max-height: 80%;
+    }
+
+    .giorno>h1 {
+        font-size: 16px;
+    }
+
+    .giorno>p {
+        font-size: 12px;
+    }
+
+    .newLesson {
+        width: 70vw;
+        max-width: 400px;
+    }
+
+    .info_user .nome,
+    .info_user .ruolo_principale {
+        padding: 6px 10px;
+        font-size: 11px;
+    }
+}
+
+/* Desktop styles */
+@media (min-width: 769px) {
+    .newLesson {
+        width: 30%;
+        max-width: 500px;
+        min-width: 400px;
+    }
+}
+
+/* Landscape mobile styles */
+@media (max-height: 500px) and (orientation: landscape) {
+    .newLesson {
+        max-height: 95vh;
+        overflow-y: auto;
+        padding: 15px;
+    }
+
+    .container-principale {
+        grid-template-columns: repeat(7, 1fr);
+        grid-template-rows: 85% 15%;
+        grid-template-areas:
+            "giorno1 giorno2 giorno3 giorno4 giorno5 giorno6 giorno7"
+            "button button button button button button button";
+        height: 95vh;
+    }
+
+    .giorno>h1 {
+        font-size: 12px;
+    }
+
+    .giorno>p {
+        font-size: 10px;
+    }
+
+    .PrenotazioniGiorno {
+        max-height: 75%;
+    }
+}
+
+
+
+
+
+/* ====== TOAST / NOTIFICHE ====== */
+.toast-container {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1100;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    pointer-events: none;
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+    gap: 12px;
+    padding: 14px 16px;
+    border-radius: 20px;
+    border: 2px solid #f69118;
+    background: linear-gradient(to top right, #f69118, #fff);
+    box-shadow:
+        0 20px 60px rgba(0, 0, 0, 0.25),
+        0 8px 32px rgba(246, 145, 24, 0.3);
+    min-width: 290px;
+    max-width: min(92vw, 420px);
+    color: #333;
+    animation: toastIn 320ms cubic-bezier(0.34, 1.56, 0.64, 1) forwards,
+        toastOut 300ms ease forwards 4.2s;
+    /* auto-hide dopo ~4.2s */
+    pointer-events: auto;
+    /* riabilita click all'interno */
+    border-color: #2ecc71;
+}
+
+
+
+
+/* Testi */
+.toast-content h4 {
+    margin: 0 0 2px 0;
+    font-size: 15px;
+    font-weight: 800;
+    color: #000;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.06);
+}
+
+.toast-content p {
+    margin: 0;
+    font-size: 13px;
+    color: #333;
+}
+
+/* Bottone chiudi */
+.toast-close {
+    appearance: none;
+    border: none;
+    background: rgba(255, 255, 255, 0.75);
+    color: #333;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    font-size: 18px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: transform 0.15s ease, background 0.2s ease;
+
+    display: flex;
+    justify-content: center;
+    line-height: 1;
+    padding: 0;
+    align-items: center;
+}
+
+.toast-close:hover {
+    transform: scale(1.06);
+    background: #fff;
+}
+
+.toast-close:active {
+    transform: scale(0.94);
+}
+
+/* Animazioni */
+@keyframes toastIn {
+    from {
+        opacity: 0;
+        transform: translateY(-12px) scale(0.98);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+@keyframes toastOut {
+    to {
+        opacity: 0;
+        transform: translateY(-8px) scale(0.98);
+    }
+}
+
+/* Evita che copra i contenuti a schermi mediopiccoli */
+@media (max-width: 885px) {
+    .toast-container {
+        top: 15px;
+        right: 15px;
+        gap: 10px;
+        border-radius: 16px;
+        min-width: 260px;
+        padding: 12px 14px;
+    }
+}
+
+/* Schermi molto piccoli: centrato in alto per non sovrapporsi a .info_user */
+@media (max-width: 480px) {
+    .toast-container {
+        top: 15px;
+        /* già lo hai, ma meglio specificarlo */
+        left: 50%;
+        /* centro rispetto alla viewport */
+        right: auto;
+        /* disattivo il right */
+        transform: translateX(-50%);
+        width: calc(100vw - 24px);
+        /* margini laterali */
+        max-width: 420px;
+        align-items: center;
+        width: 100%;
+        max-width: 420px;
+        min-width: unset;
+        display: flex;
+        justify-content: space-between;
+    }
+
+
+}
+
+.newLesson>.numerogiorno>.numerogiorno_input {
+    padding: 10px 14px;
+    border: 2px solid #f69118;
+    border-radius: 15px;
+    font-size: 14px;
+    background-color: #fff;
+    color: #333;
+    outline: none;
+    transition: all 0.3s ease;
+    width: 100%;
+    font-family: inherit;
+}
+
+.newLesson>.numerogiorno>.numerogiorno_input:hover {
+    border-color: #e5811a;
+    box-shadow: 0 0 6px rgba(246, 145, 24, 0.3);
+}
+
+.newLesson>.numerogiorno>.numerogiorno_input:focus {
+    border-color: #e5811a;
+    box-shadow: 0 0 8px rgba(229, 129, 26, 0.5);
+    background-color: #fff7f0;
+}
+
+
+
+/*
+.calendario .calendario_input {
+    padding: 10px 14px;
+    border: 2px solid #f69118;
+    border-radius: 20px;
+    font-size: 14px;
+    background-color: #fff;
+    color: #333;
+    outline: none;
+    transition: all 0.3s ease;
+    font-family: inherit;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(246, 145, 24, 0.2);
+}
+
+.calendario .calendario_input:hover {
+    border-color: #e5811a;
+    box-shadow: 0 0 8px rgba(246, 145, 24, 0.4);
+    transform: translateY(-1px);
+}
+
+.calendario .calendario_input:focus {
+    border-color: #e5811a;
+    box-shadow: 0 0 12px rgba(229, 129, 26, 0.6);
+    background-color: #fff7f0;
+    transform: translateY(-1px);
+}
+*/
+/* Personalizzazione dell'icona del calendario */
+/*
+.calendario .calendario_input::-webkit-calendar-picker-indicator {
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg width='16' height='16' viewBox='0 0 16 16' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill='%23f69118' d='M11 2V1a1 1 0 0 0-2 0v1H7V1a1 1 0 0 0-2 0v1H3a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2h-2zM3 4h10v1H3V4zm0 3h10v6H3V7z'/%3E%3C/svg%3E");
+    background-size: 16px;
+    cursor: pointer;
+    opacity: 0.8;
+    transition: opacity 0.3s ease;
+}
+
+.calendario .calendario_input::-webkit-calendar-picker-indicator:hover {
+    opacity: 1;
+}
+*/
+.calendario>.calendario_input {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+    z-index: -1;
+}
+
+.calendario {
+    position: relative;
+    /* segue il flusso della pagina */
+    margin: 8px auto 0;
+    /* piccolo spazio sotto il titolo, centrato */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 6px;
+    /* meno spazio tra input e div */
+    font-family: inherit;
+    font-size: 12px;
+    /* testo più piccolo */
+}
+
+.calendario>.calendario_view {
+    padding: 6px 10px;
+    /* padding ridotto */
+    border: 2px solid #f69118;
+    border-radius: 12px;
+    /* più piccolo e arrotondato */
+    background: #fff;
+    color: #333;
+    font-size: 12px;
+    cursor: pointer;
+    box-shadow: 0 1px 4px rgba(246, 145, 24, 0.3);
+    /* ombra più sottile */
+    min-width: 90px;
+    /* larghezza minima ridotta */
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.calendario>.calendario_view:hover {
+    border-color: #e5811a;
+    box-shadow: 0 0 6px rgba(246, 145, 24, 0.4);
+    transform: translateY(-1px);
+}
+
+.calendario>.calendario_view:active {
+    transform: translateY(1px);
+}
+
+.calendario>.calendario_view::after {
+    content: '';
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    margin-left: 4px;
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg width='16' height='16' viewBox='0 0 16 16' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill='%23f69118' d='M11 2V1a1 1 0 0 0-2 0v1H7V1a1 1 0 0 0-2 0v1H3a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2h-2zM3 4h10v1H3V4zm0 3h10v6H3V7z'/%3E%3C/svg%3E");
+    background-size: cover;
+    vertical-align: middle;
+    pointer-events: none;
+}
+
+.calendario_pop_up {
+    position: absolute;
+    top: 122px;
+    left: 50%;
+    background: #fff;
+    border: 2px solid #f69118;
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+    padding: 16px;
+    min-width: 280px;
+    transform: translateX(-147px);
+    transition: all 0.3s ease;
+    z-index: 1000;
+}
+
+.calendario_pop_up>.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+}
+
+.calendario_pop_up>.header>.buthead {
+    background: none;
+    border: none;
+    font-size: 18px;
+    color: #f69118;
+    cursor: pointer;
+    padding: 4px 8px;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+.calendario_pop_up>.header>.buthead:hover {
+    background-color: rgba(246, 145, 24, 0.1);
+}
+
+.calendario_pop_up>.mese {
+    font-weight: bold;
+    color: #333;
+    font-size: 16px;
+}
+
+.calendario_pop_up>.calendario-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 4px;
+    margin-bottom: 8px;
+}
+
+.calendario_pop_up>.calendario-grid>.calendario-day-header {
+    text-align: center;
+    font-size: 12px;
+    font-weight: bold;
+    color: #666;
+    padding: 8px 4px;
+}
+
+.calendario_pop_up>.calendario-grid>.calendario-day {
+    text-align: center;
+    padding: 8px 4px;
+    cursor: pointer;
+    border-radius: 6px;
+    font-size: 14px;
+    transition: all 0.3s ease;
+}
+
+.calendario_pop_up>.calendario-grid>.calendario-day:hover {
+    background-color: rgba(246, 145, 24, 0.1);
+}
+
+.calendario_pop_up>.calendario-grid>.calendario-day.other-month {
+    color: #ccc;
+}
+
+
+
+.calendario_pop_up>.calendario-grid>.calendario-day.today {
+    background-color: rgba(246, 145, 24, 0.2);
+    font-weight: bold;
+}
+
+.calendario_pop_up>.calendario-grid>.calendario-day.selected {
+    background-color: #f69118;
+    color: #fff;
+}
+.cliente{
+    margin-top: 0;
+}

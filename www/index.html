@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="asset/css/style.css">
+    <title>FitActive</title>
+</head>
+
+<body>
+    <h1 class="title">Fit<span>Active</span></h1>
+    <div class="container-login grid">
+        <div class="bordo">
+            <div class="superior_bar ">
+                <h1 tipo="login" class="active">Login</h1>
+                <h1 tipo="registrati">Registrati</h1>
+            </div>
+            <div class="login flex">
+                <div class="errore no-focus">
+                    <div class="errore_vuoto no-focus">inserisci i campi</div>
+                    <div class="errore_noncorretti no-focus">credenziali non corretti</div>
+                </div>
+                <div class="username">
+                    <span>Username</span> <br />
+                    <input type="text" placeholder="Username" class="username_input" />
+                </div>
+                <div class="password">
+                    <span>Password</span> <br />
+                    <input type="password" placeholder="Password" class="password_input" />
+                    <div class="icon"></div>
+                </div>
+                <button>Login</button>
+            </div>
+            <div class="registrati no-focus">
+                <div class="errore no-focus">
+                    <div class="errore_vuoti no-focus">inserisci i campi</div>
+                    <div class="errore_presente no-focus">utente già presente vai al login</div>
+                    <div class="errore_admin no-focus">password admin errata</div>
+                </div>
+                <div class="username">
+                    <span>Username</span> <br />
+                    <input type="text" placeholder="Username" class="username_input" />
+                </div>
+                <div class="password">
+                    <span>Password</span> <br />
+                    <input type="password" placeholder="Password" class="password_input" />
+                    <div class="icon"></div>
+                </div>
+                <div class="ruolo">
+                    <span>Ruolo</span> <br />
+                    <select class="ruolo_input">
+                        <option value=""></option>
+                        <option value="cliente">cliente</option>
+                        <option value="personal trainer">personal trainer</option>
+                        <option value="admin">admin</option>
+                    </select>
+                </div>
+                <button>Registrati</button>
+            </div>
+            <div class="attivita no-focus">
+                <div class="errore no-focus">inserisci i campi</div>
+                <label><input type="checkbox" name="attivita" class="attivita_input" value="sala_pesi">Sala Pesi</label>
+                <label><input type="checkbox" name="attivita" class="attivita_input" value="crossfit">Crossfit</label>
+                <label><input type="checkbox" name="attivita" class="attivita_input" value="danza">Danza</label>
+                <label><input type="checkbox" name="attivita" class="attivita_input"
+                        value="funzionale">Funzionale</label>
+                <label><input type="checkbox" name="attivita" class="attivita_input" value="fit_box">Fit Box</label>
+                <label><input type="checkbox" name="attivita" class="attivita_input" value="tutto">Tutto</label>
+                <button>Continua</button>
+            </div>
+            <div class="prezzo no-focus">
+                <div class="errore no-focus">Accetta i Termini di Servizio per continuare</div>
+                <p>Abbonati ora: </p>
+                <h1></h1>
+                <label><input type="checkbox" class="termini" id="">ho letto e accetto i Termini di Servizio</label>
+                <button>Continua</button>
+            </div>
+        </div>
+    </div>
+    <!--
+    <div class="toast-container" aria-live="polite" aria-atomic="true">
+
+            
+            <div class="toast-content">
+                <h4>Lezione creata</h4>
+                <p>È stata registrata una nuova prenotazione.</p>
+            </div>
+            <button class="toast-close" aria-label="Chiudi">X</button>
+    </div>
+    -->
+
+
+
+    
+    <script type="module" src="asset/js/browser.js"></script>
+</body>
+
+</html>
